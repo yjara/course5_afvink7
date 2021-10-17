@@ -102,6 +102,10 @@ public class SeqVis extends JFrame implements ActionListener {
                 openfile();
                 drawRecsetText();
             } catch (InvalidFileException ex) {
+                Graphics paper = panel.getGraphics();
+                paper.setColor(Color.white);
+                paper.clearRect(0,0,480,50);
+                info.setText("Invaled file");
                 ex.printStackTrace();
             }
         }
